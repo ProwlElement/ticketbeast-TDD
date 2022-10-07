@@ -1,0 +1,9 @@
+tap "eugenmayer/dockersync"
+tap "homebrew/bundle"
+tap "homebrew/core"
+brew "composer"
+brew "git-flow-avh"
+brew "php@7.4", link: true
+brew "python@3.10"
+brew "unison"
+brew "eugenmayer/dockersync/unox"
