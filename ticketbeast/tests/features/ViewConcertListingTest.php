@@ -12,7 +12,7 @@ class ViewConcertListingTest extends TestCase
 
   
   /** @test */
-  function user_can_view_a_concert_listing() {
+  public function user_can_view_a_concert_listing() {
 
       //Arrange
 
@@ -33,22 +33,22 @@ class ViewConcertListingTest extends TestCase
       //Act
 
         // view the concert listing
-        $this->visit('/concerts/'.$concert->id);
+        $response = $this->get('/concerts/' . $concert->id);
 
       //Assert                                           
       
         // see the concert details
-        $this->see('The Red Chord');
-        $this->see('with Anamosity and Thin Lizzy');
-        $this->see('December 13, 2016');
-        $this->see('8:00pm');
-        $this->see('32.50');
-        $this->see('Moon Mosh Pit');
-        $this->see('123 Example Court');
-        $this->see('Dubklin');
-        $this->see('IRL');
-        $this->see('123456');
-        $this->see('For tickets, call (555) 555-555');
-    
+        $this->assertSee('The Red Chord');
+        $this->assertSee('with Anamosity and Thin Lizzy');
+        $this->assertSee('December 13, 2016');
+        $this->assertSee('8:00pm');
+        $this->assertSee('32.50');
+        $this->assertSee('Moon Mosh Pit');
+        $this->assertSee('123 Example Court');
+        $this->assertSee('Dubklin');
+        $this->assertSee('IRL');
+        $this->assertSee('123456');
+        $this->assertSee('For tickets, call (555) 555-555');
+        
   }
 }
