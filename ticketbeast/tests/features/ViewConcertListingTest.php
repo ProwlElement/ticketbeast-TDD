@@ -8,8 +8,12 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ViewConcertListingTest extends TestCase
 {
+  use DatabaseMigrations;
+
+  
   /** @test */
   function user_can_view_a_concert_listing() {
+
       //Arrange
 
         // create a concert
@@ -45,7 +49,6 @@ class ViewConcertListingTest extends TestCase
         $this->see('IRL');
         $this->see('123456');
         $this->see('For tickets, call (555) 555-555');
-
     
   }
 }
